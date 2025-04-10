@@ -1,93 +1,85 @@
 # GibraPay JS
 
-Official Node.js client library for the GibraPay API.
+Biblioteca cliente oficial em Node.js para a API GibraPay.
 
-## Installation
+## Instalação
 
 ```bash
 npm install gibrapay-js
 ```
 
-## Usage
+## Uso
 
-### Initialize the Client
+### Inicializar o Cliente
 
 ```javascript
 const GibraPay = require('gibrapay-js');
 
-// Initialize with API key
-const gibrapay = new GibraPay('your-api-key');
+// Inicializar com chave API
+const gibrapay = new GibraPay('sua-chave-api');
 
-// Initialize with API key and wallet ID
-const gibrapay = new GibraPay('your-api-key', 'your-wallet-id');
+// Inicializar com chave API e ID da carteira
+const gibrapay = new GibraPay('sua-chave-api', 'seu-id-carteira');
 ```
 
-### Wallet Operations
+### Operações de Carteira
 
 ```javascript
 const Wallet = require('gibrapay-js/lib/wallet');
 
-// Create a wallet instance
-const wallet = new Wallet('your-api-key', 'your-wallet-id');
+// Criar uma instância de carteira
+const wallet = new Wallet('sua-chave-api', 'seu-id-carteira');
 
-// Get wallet details
-const walletDetails = await wallet.get();
-
-// Create a new wallet
-const newWallet = await wallet.create({
-  // wallet creation parameters
-});
+// Obter detalhes da carteira
+const detalhesCarteira = await wallet.get();
 ```
 
-### Transaction Operations
+### Operações de Transações
 
 ```javascript
 const Transactions = require('gibrapay-js/lib/transactions');
 
-// Create a transactions instance
-const transactions = new Transactions('your-api-key', 'your-wallet-id');
+// Criar uma instância de transações
+const transactions = new Transactions('sua-chave-api', 'seu-id-carteira');
 
-// Get all transactions for a wallet
-const allTransactions = await transactions.get();
-
-// Get a specific transaction
-const transaction = await transactions.get('transaction-id');
+// Obter todas as transações de uma carteira
+const todasTransacoes = await transactions.get();
 ```
 
-### Transfer Operations
+### Operações de Transferência
 
 ```javascript
 const Transfer = require('gibrapay-js/lib/transfer');
 
-// Create a transfer instance
-const transfer = new Transfer('your-api-key', 'your-wallet-id', amount, phoneNumber);
+// Criar uma instância de transferência
+const transfer = new Transfer('sua-chave-api', 'seu-id-carteira', valor, numeroTelefone);
 
-// Execute the transfer
-const result = await transfer.execute();
+// Executar a transferência
+const resultado = await transfer.execute();
 ```
 
-### Withdraw Operations
+### Operações de Saque
 
 ```javascript
 const Withdraw = require('gibrapay-js/lib/withdraw');
 
-// Create a withdraw instance
-const withdraw = new Withdraw('your-api-key', 'your-wallet-id', amount, phoneNumber);
+// Criar uma instância de saque
+const withdraw = new Withdraw('sua-chave-api', 'seu-id-carteira', valor, numeroTelefone);
 
-// Execute the withdrawal
-const result = await withdraw.execute();
+// Executar o saque
+const resultado = await withdraw.execute();
 ```
 
-## Error Handling
+## Tratamento de Erros
 
-The library throws errors with the following properties:
-- `message`: Error message from the API or a generic message
-- `code`: HTTP status code (for API errors)
+A biblioteca lança erros com as seguintes propriedades:
+- `message`: Mensagem de erro da API ou uma mensagem genérica
+- `code`: Código de status HTTP (para erros da API)
 
-## Dependencies
+## Dependências
 
-- axios: ^0.21.1
+- axios: ^1.9.0
 
-## License
+## Licença
 
 MIT
