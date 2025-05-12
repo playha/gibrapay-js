@@ -78,7 +78,7 @@ A biblioteca lança erros com as seguintes propriedades:
 
 ## Dependências
 
-- axios: ^0.21.1
+- axios: ^1.9.0
 
 ## Licença
 
